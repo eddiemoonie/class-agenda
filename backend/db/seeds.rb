@@ -5,3 +5,5 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+java = Subject.create(:name => "Intro to Java")
+final_project = Assignment.create(:name => "Final Project", :subject => java)
