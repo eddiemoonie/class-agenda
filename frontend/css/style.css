@@ -4,6 +4,8 @@ body {
   text-align: center;
 }
 
+/* Subject css */
+
 /* Style the tabs */
 .subject-tabs {
   overflow: hidden;
@@ -22,6 +24,11 @@ body {
   transition: 0.3s;
 }
 
+/* Style the add button */
+.add-button {
+  float: right;
+}
+
 /* Change background color of buttons on hover */
 .subject-tabs button:hover {
   background-color: #ddd;
@@ -33,11 +40,13 @@ body {
 }
 
 .subject-form-container {
-  padding: 20px;
+  padding: 20px 150px 0px;
 }
 
-/* Assignments */
 
+/* Assignment css*/
+
+/* Style for assignment form */
 .assignment-form-container {
   padding: 20px;
 }
@@ -54,12 +63,15 @@ input {
   font-size: 20px;
 }
 
+/* Style the new assignment button */
 #enter {
  border: none;
  padding: 5px 15px;
  border-radius: 5px;
- color: #04A1BF;
- background-color: #025F70;
+ /* color: #04A1BF; */
+ color: #000;
+ /* background-color: #025F70; */
+ background-color: #F3DB28;
  transition: all 0.75s ease;
  -webkit-transition: all 0.75s ease;
  -moz-transition: all 0.75s ease;
@@ -68,6 +80,7 @@ input {
  font-weight: normal;
 }
 
+/* Style the assignments list */
 ul {
 	text-align: left;
 	margin-top: 20px;
