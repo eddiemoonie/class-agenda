@@ -1,5 +1,6 @@
 body {
   /* background-color: #00acee; */
+  background-color: #E8E6E0;
   text-align: center;
 }
 
@@ -29,4 +30,71 @@ body {
 /* Create an active/current tablink class */
 .subject-tabs button.active {
   background-color: #ccc;
+}
+
+.subject-form-container {
+  padding: 20px;
+}
+
+/* Assignments */
+
+.assignment-form-container {
+  padding: 20px;
+}
+
+input {
+  border: 2px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	border-radius: 5px;
+	min-width: 65%;
+	padding: 5px;
+	border: none;
+  background: #f1f1f1;
+  font-size: 20px;
+}
+
+#enter {
+ border: none;
+ padding: 5px 15px;
+ border-radius: 5px;
+ color: #04A1BF;
+ background-color: #025F70;
+ transition: all 0.75s ease;
+ -webkit-transition: all 0.75s ease;
+ -moz-transition: all 0.75s ease;
+ -ms-transition: all 0.75s ease;
+ -o-transition: all 0.75 ease;
+ font-weight: normal;
+}
+
+ul {
+	text-align: left;
+	margin-top: 20px;
+  padding: 0px 200px;
+}
+
+
+li {
+	list-style: none;
+	padding: 10px 20px;
+	/* color: #ffffff; */
+  color: #000;
+	text-transform: capitalize;
+	font-weight: 600;
+	/* border: 2px solid #025f70; */
+  border: 2px solid #ccc;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	/* background: #4EB9CD; */
+  background: #f1f1f1;
+	transition: all 0.75s ease;
+	-webkit-transition: all 0.5s ease;
+	-moz-transition: all 0.5s ease;
+	-ms-transition: all 0.5s ease;
+	-o-transition: all 0.5 ease;
+}
+
+li:hover {
+	background: #76CFE0;
 }
