@@ -39,8 +39,9 @@ body {
   background-color: #ccc;
 }
 
-.subject-form-container {
+#subject-form-container {
   padding: 20px 150px 0px;
+  display: none;
 }
 
 
