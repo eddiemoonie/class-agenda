@@ -64,7 +64,7 @@ input {
 }
 
 /* Style the new assignment button */
-#enter {
+.enter {
  border: none;
  padding: 5px 15px;
  border-radius: 5px;
