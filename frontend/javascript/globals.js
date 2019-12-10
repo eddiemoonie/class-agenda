@@ -10,4 +10,6 @@ const subjectForm = document.getElementById('subject-form-container')
 const addSubjectBtn = document.getElementById('add-subject-button')
 const addAssignmentBtn = document.getElementById('add-assignment-button')
 
+const subjectTabs = document.getElementById('subject-tabs')
+
 let renderForm = false

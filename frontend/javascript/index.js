@@ -23,5 +23,6 @@ renderFormBtn.addEventListener('click', e => {
 subjectForm.addEventListener('submit', e => {
   e.preventDefault();
   Subject.postSubject(e.target);
+  Subject.addSubjectTab(e.target);
   console.log('Subject has been submitted')
 });

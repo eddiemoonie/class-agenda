@@ -38,4 +38,10 @@ class Subject {
       .then(clearForm)
   }
 
+  static addSubjectTab(subjectObj) {
+    let button = document.createElement('button')
+    button.className = 'tablinks'
+    button.textContent = subjectObj.name.value
+    subjectTabs.appendChild(button)
+  }
 }

@@ -7,14 +7,14 @@ body {
 /* Subject css */
 
 /* Style the tabs */
-.subject-tabs {
+#subject-tabs {
   overflow: hidden;
   border: 1px solid #ccc;
   background-color: #f1f1f1;
 }
 
 /* Style the buttons that are used to open the tab */
-.subject-tabs button {
+#subject-tabs button {
   background-color: inherit;
   float: left;
   border: none;
@@ -30,12 +30,12 @@ body {
 }
 
 /* Change background color of buttons on hover */
-.subject-tabs button:hover {
+#subject-tabs button:hover {
   background-color: #ddd;
 }
 
 /* Create an active/current tablink class */
-.subject-tabs button.active {
+#subject-tabs button.active {
   background-color: #ccc;
 }
 
