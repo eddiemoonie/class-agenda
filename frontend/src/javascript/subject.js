@@ -11,7 +11,7 @@ class Subject {
     this.id = id
   }
 
-  renderSubject() {
+  renderSubjectTab() {
     let button = document.createElement('button');
     let removeIcon = document.createElement('span');
 
@@ -41,6 +41,11 @@ class Subject {
         })
     })
   }
+
+  renderSubjectView() {
+    let subjectHead = document.getElementById('subject-head');
+    subjectHead.textContent = `${this.name}`
+  }
 }
 
 function fetchSubjects() {
@@ -49,7 +54,7 @@ function fetchSubjects() {
     .then(json => json.data.forEach(subject => {
       let newSubject = new Subject(subject.attributes.name, subject.id)
       allSubjects.push(newSubject);
-      newSubject.renderSubject();
+      newSubject.renderSubjectTab();
   }))
 }
 
@@ -76,7 +81,8 @@ function addNewSubject() {
       .then(subject => {
         let newSubject = new Subject(subject.name, subject.id);
         allSubjects.push(newSubject);
-        newSubject.renderSubject();
+        newSubject.renderSubjectTab();
+        newSubject.renderSubjectView();
       })
       .then(clearForm)
       .then(clickAddClass)
