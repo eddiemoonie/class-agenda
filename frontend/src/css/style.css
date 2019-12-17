@@ -24,6 +24,10 @@ body {
   transition: 0.3s;
 }
 
+#subject-tabs button span {
+  display: none;
+}
+
 /* Style the add button */
 .add-button {
   float: right;
@@ -32,6 +36,10 @@ body {
 /* Change background color of buttons on hover */
 #subject-tabs button:hover {
   background-color: #ddd;
+}
+
+#subject-tabs button:hover span {
+  display: inline-block;
 }
 
 /* Create an active/current tablink class */

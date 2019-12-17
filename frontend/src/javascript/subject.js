@@ -13,9 +13,33 @@ class Subject {
 
   renderSubject() {
     let button = document.createElement('button');
+    let removeIcon = document.createElement('span');
+
     button.className = 'tablinks';
-    button.textContent = `${this.name}`;
+    button.textContent = `${this.name} `;
+
+    removeIcon.className = 'glyphicon glyphicon-remove-circle';
+    removeIcon.id = `delete-subject-${this.id}`;
+    removeIcon.setAttribute('data-subject-id', `${this.id}`)
+
+    button.append(removeIcon);
+
     subjectTabs.append(button);
+
+    let removeBtn = document.getElementById(`delete-subject-${this.id}`)
+
+    removeBtn.addEventListener('click', e => {
+      let delObj = {
+        method: 'DELETE'
+      }
+
+      fetch(`${SUBJECTS_URL}/${e.target.dataset.subjectId}`, delObj)
+        .then(resp => resp.json())
+        .then(function (json) {
+          e.target.parentNode.remove();
+          allSubjects.splice(allSubjects.findIndex(subject => subject.id === `${e.target.dataset.subjectId}`), 1)
+        })
+    })
   }
 }
 
