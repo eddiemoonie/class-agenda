@@ -56,8 +56,9 @@ body {
 /* Assignment css*/
 
 /* Style for assignment form */
-.assignment-form-container {
+#assignment-form-container {
   padding: 20px;
+  visibility: hidden;
 }
 
 input {

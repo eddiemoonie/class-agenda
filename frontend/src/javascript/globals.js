@@ -12,8 +12,11 @@ const parseJSON = response => response.json()
 const renderFormBtn = document.getElementById('render-form-button')
 const subjectForm = document.getElementById('subject-form-container')
 const addSubjectBtn = document.getElementById('add-subject-button')
-const addAssignmentBtn = document.getElementById('add-assignment-button')
+let subjectHead = document.getElementById('subject-head')
 
 const subjectTabs = document.getElementById('subjects')
+
+const assignForm = document.getElementById('assignment-form-container')
+const addAssignmentBtn = document.getElementById('add-assignment-button')
 
 let renderForm = false

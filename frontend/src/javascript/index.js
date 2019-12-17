@@ -9,8 +9,20 @@ function clearForm() {
   document.querySelector('.subject-input').value = ""
 }
 
+function clearSubjectView() {
+  subjectHead.textContent = '';
+  assignForm.style.visibility = 'hidden';
+}
+
 function clickAddClass() {
   renderFormBtn.click()
+}
+
+function renderAssignmentForm() {
+  console.log('rendering...');
+  if(assignForm.style.visibility = 'hidden') {
+    assignForm.style.visibility = 'visible';
+  }
 }
 
 renderFormBtn.addEventListener('click', e => {

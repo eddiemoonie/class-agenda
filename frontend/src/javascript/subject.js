@@ -28,6 +28,11 @@ class Subject {
 
     let removeBtn = document.getElementById(`delete-subject-${this.id}`)
 
+    button.addEventListener('click', e => {
+      subjectHead.textContent = `${this.name}`;
+      renderAssignmentForm();
+    })
+
     removeBtn.addEventListener('click', e => {
       let delObj = {
         method: 'DELETE'
@@ -39,12 +44,12 @@ class Subject {
           e.target.parentNode.remove();
           allSubjects.splice(allSubjects.findIndex(subject => subject.id === `${e.target.dataset.subjectId}`), 1)
         })
+        .then(clearSubjectView)
     })
   }
 
   renderSubjectView() {
-    let subjectHead = document.getElementById('subject-head');
-    subjectHead.textContent = `${this.name}`
+    subjectHead.textContent = `${this.name}`;
   }
 }
 
@@ -86,5 +91,6 @@ function addNewSubject() {
       })
       .then(clearForm)
       .then(clickAddClass)
+      .then(renderAssignmentForm)
   });
 }
