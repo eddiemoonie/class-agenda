@@ -15,6 +15,12 @@ class SubjectsController < ApplicationController
     render json: subject
   end
 
+  def destroy
+    subject = Subject.find_by_id(params[:id])
+    subject.destroy
+    render json: subject
+  end
+
   private
 
   def subject_params
