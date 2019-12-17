@@ -10,11 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_02_191737) do
+ActiveRecord::Schema.define(version: 2019_12_17_042501) do
 
   create_table "assignments", force: :cascade do |t|
     t.string "name"
-    t.date "due_date"
     t.integer "subject_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
