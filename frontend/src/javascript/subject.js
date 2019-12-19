@@ -11,7 +11,8 @@ class Subject {
     this.id = id
   }
 
-  renderSubjectTab() {
+  renderSubject() {
+    // render subject navigation bar
     let button = document.createElement('button');
     let removeIcon = document.createElement('span');
 
@@ -23,9 +24,45 @@ class Subject {
     removeIcon.setAttribute('data-subject-id', `${this.id}`)
 
     button.append(removeIcon);
-
     subjectTabs.append(button);
 
+    //render subject header
+    subjectHead.textContent = `${this.name}`;
+
+    //render assignment form
+    renderAssignmentForm();
+    fetchAssignments();
+
+    //add assignment
+    assignForm.addEventListener('submit', e => {
+      e.preventDefault();
+
+      let assignName = e.target.name.value
+
+      let formData = {
+        name: assignName,
+        subject_id: `${this.id}`,
+      }
+
+      let configObj = {
+        method: 'POST',
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json"
+        },
+        body: JSON.stringify(formData)
+      }
+
+      return fetch(ASSIGNMENTS_URL, configObj)
+        .then(resp => resp.json())
+        .then(assign => {
+          let newAssign = new Assignment(assign.name, assign.subject_id, assign.id)
+          allAssign.push(newAssign);
+          newAssign.renderAssignments();
+        })
+    })
+
+    //delete subject
     let removeBtn = document.getElementById(`delete-subject-${this.id}`)
 
     button.addEventListener('click', e => {
@@ -47,22 +84,20 @@ class Subject {
         .then(clearSubjectView)
     })
   }
-
-  renderSubjectView() {
-    subjectHead.textContent = `${this.name}`;
-  }
 }
 
+//fetch subjects
 function fetchSubjects() {
   fetch(SUBJECTS_URL)
     .then(parseJSON)
     .then(json => json.data.forEach(subject => {
       let newSubject = new Subject(subject.attributes.name, subject.id)
       allSubjects.push(newSubject);
-      newSubject.renderSubjectTab();
+      newSubject.renderSubject();
   }))
 }
 
+//add new subject
 function addNewSubject() {
   subjectForm.addEventListener('submit', e => {
     e.preventDefault();
@@ -86,11 +121,9 @@ function addNewSubject() {
       .then(subject => {
         let newSubject = new Subject(subject.name, subject.id);
         allSubjects.push(newSubject);
-        newSubject.renderSubjectTab();
-        newSubject.renderSubjectView();
+        newSubject.renderSubject();
       })
       .then(clearForm)
       .then(clickAddClass)
-      .then(renderAssignmentForm)
   });
 }

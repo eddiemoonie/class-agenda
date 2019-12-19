@@ -12,6 +12,7 @@ class AssignmentsController < ApplicationController
   def create
     assignment = Assignment.new(assignment_params)
     subjects = Subject.all
+    assignment.save
     render json: assignment
   end
 

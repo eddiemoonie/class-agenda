@@ -16,7 +16,8 @@ let subjectHead = document.getElementById('subject-head')
 
 const subjectTabs = document.getElementById('subjects')
 
-const assignForm = document.getElementById('assignment-form-container')
+const assignForm = document.getElementById('assignment-form')
 const addAssignmentBtn = document.getElementById('add-assignment-button')
+const assignList = document.getElementById('assignments')
 
 let renderForm = false

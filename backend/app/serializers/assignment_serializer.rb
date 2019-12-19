@@ -1,5 +1,5 @@
 class AssignmentSerializer
   include FastJsonapi::ObjectSerializer
-  attributes :name, :due_date
+  attributes :name
   belongs_to :subject
 end
