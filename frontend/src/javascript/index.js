@@ -5,17 +5,21 @@ document.addEventListener('DOMContentLoaded',
   console.log('index.js is loaded...');
 });
 
-function clearForm() {
+function clearSubjectForm() {
   document.querySelector('.subject-input').value = ""
 }
 
 function clearSubjectView() {
   subjectHead.textContent = '';
-  assignForm.style.visibility = 'hidden';
+  assignForm.style.visibility = 'hidden'
 }
 
 function clickAddClass() {
   renderFormBtn.click()
+}
+
+function clickFirstTab(){
+  subjectTabs.firstElementChild.click()
 }
 
 function renderAssignmentForm() {
@@ -25,8 +29,12 @@ function renderAssignmentForm() {
   }
 }
 
+function clearAssignForm() {
+  document.querySelector('.assignment-input').value = ""
+}
+
 renderFormBtn.addEventListener('click', e => {
-  console.log('add class button was clicked');
+  console.log('add class button was clicked')
   if(subjectForm.style.display === 'block') {
     e.preventDefault();
     renderFormBtn.style.backgroundColor = '#f1f1f1';

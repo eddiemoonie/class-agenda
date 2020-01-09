@@ -11,8 +11,14 @@ class AssignmentsController < ApplicationController
 
   def create
     assignment = Assignment.new(assignment_params)
-    subjects = Subject.all
+    # subjects = Subject.all
     assignment.save
+    render json: assignment
+  end
+
+  def destroy
+    assignment = Assignment.find_by_id(params[:id])
+    assignment.destroy
     render json: assignment
   end
 
