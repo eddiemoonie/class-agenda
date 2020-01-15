@@ -27,6 +27,8 @@ class Subject {
     // subject tab event listener
     button.addEventListener('click', e => {
       this.renderSubject()
+      subjectTabs.textContent = ''
+      fetchSubjects();
     })
 
     // delete subject
@@ -78,9 +80,14 @@ class Subject {
         .then(parseJSON)
         .then(assign => {
           let newAssign = new Assignment(assign.name, assign.subject_id, assign.id)
+          debugger
           console.log(newAssign)
           // allAssign.push(newAssign);
-          debugger
+
+          //////
+          fetch(SUBJECTS_URL)
+            .then(parseJSON)
+            .then(json => json.data.find(subject => subject.id === newAssign.subject_id))
           // newAssign.subject.renderSubject();
           //need to fix this
           // renderSubject(newAssign.subject_id);
@@ -101,7 +108,7 @@ function fetchSubjects() {
       console.log(newSubject)
       newSubject.renderSubjectTab()
     }))
-    .then(clickFirstTab)
+    // .then(clickFirstTab)
 }
 
 //add new subject
@@ -129,7 +136,9 @@ function addNewSubject() {
       .then(subject => {
         let newSubject = new Subject(subject.name, subject.id)
         console.log(newSubject)
-        newSubject.renderSubjectTab()
+        // newSubject.renderSubjectTab()
+        subjectTabs.textContent = ''
+        fetchSubjects();
         newSubject.renderSubject()
       })
       .then(clearSubjectForm)
